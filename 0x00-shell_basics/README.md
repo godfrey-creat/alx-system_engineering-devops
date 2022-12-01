@@ -1,1 +1,1 @@
-List all files in the current directory, parent directory and /root
+Print the type of the file named iamafile
