@@ -1,1 +1,1 @@
-Changes the working directory to the previous one
+List all files in the current directory, parent directory and /root
