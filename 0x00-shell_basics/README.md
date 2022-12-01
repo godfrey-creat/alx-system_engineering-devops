@@ -1,1 +1,1 @@
-Delete file betry
+Delete my first directory
