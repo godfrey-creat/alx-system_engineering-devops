@@ -1,1 +1,1 @@
-prints efective username of current user
+switches the current user to betty
