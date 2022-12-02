@@ -1,1 +1,1 @@
-delete all files in current working directory
+creates directories
