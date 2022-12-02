@@ -1,1 +1,1 @@
-switches current user to Betty
+changes current user to betty
