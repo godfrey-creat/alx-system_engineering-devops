@@ -1,1 +1,1 @@
-Switches the current user to betty
+switches current directory to betty
