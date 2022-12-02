@@ -1,1 +1,1 @@
-no owner, no group others all
+sets the mode of all the files hello
