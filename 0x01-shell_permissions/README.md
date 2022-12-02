@@ -1,1 +1,1 @@
-add permission to all subdirecrory
+creat my_dir with permission 751
