@@ -1,1 +1,1 @@
-changes group owner to school from the file hello
+print effective username
