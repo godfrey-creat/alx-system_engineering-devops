@@ -1,1 +1,1 @@
-replace all letters A and  c from inputs to z and e respectively
+replace A and c with z and e
