@@ -1,1 +1,1 @@
-display 10 newest lines in the current directory
+takes a list of words as inputs and print only those appearing once
