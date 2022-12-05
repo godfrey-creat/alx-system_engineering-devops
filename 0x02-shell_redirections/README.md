@@ -1,1 +1,1 @@
-delete all the regular files
+count number of sirectories and subdirectories
