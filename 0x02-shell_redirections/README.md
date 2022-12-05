@@ -1,1 +1,1 @@
-remove all letters C and c in file
+script that reverses the input
