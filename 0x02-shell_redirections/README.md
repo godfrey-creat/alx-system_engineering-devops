@@ -1,1 +1,1 @@
-writes into the file ls _cwd_content
+script that duplicates the last line of iacta file
