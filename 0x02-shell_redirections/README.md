@@ -1,1 +1,1 @@
-display lines containing the pattern root in /etc/passwd
+Count that word
