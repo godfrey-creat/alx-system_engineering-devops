@@ -1,1 +1,1 @@
-liat all the files with .gif in the current directory
+script that decodes acrostic which use the first letter of each line
