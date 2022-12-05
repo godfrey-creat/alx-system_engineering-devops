@@ -1,1 +1,1 @@
-script that duplicates the last line of iacta file
+delete all the regular files
