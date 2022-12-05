@@ -1,1 +1,1 @@
-count number of sirectories and subdirectories
+display 10 newest lines in the current directory
