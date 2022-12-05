@@ -1,1 +1,1 @@
-display lines containing the pattern root and the 3 lines after
+display all the lines in /etc/passwd that does not contain pattern 'bin'
