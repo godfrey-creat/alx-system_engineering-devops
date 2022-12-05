@@ -1,1 +1,1 @@
-script that list all usera and their directories sorted with users
+command that finds all empty files and directories in the current directory
