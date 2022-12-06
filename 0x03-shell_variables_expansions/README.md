@@ -1,1 +1,1 @@
-decimal to hexadecimal
+encodes and decodes using rot13
