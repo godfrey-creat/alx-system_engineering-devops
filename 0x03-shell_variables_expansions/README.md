@@ -1,1 +1,1 @@
-prints every other line from input
+ads two numbers
