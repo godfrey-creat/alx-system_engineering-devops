@@ -1,1 +1,1 @@
-convert a number from base 2 to base 10
+print all possible combination of two letters except oo
