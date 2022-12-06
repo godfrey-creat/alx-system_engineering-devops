@@ -1,1 +1,1 @@
-encodes and decodes using rot13
+prints every other line from input
