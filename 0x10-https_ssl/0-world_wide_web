@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Let’s add other subdomains to make our life easy for us.
+
+show_dig ()
+{
+    echo -n "The subdomain ""$2"
+    dig "$2"".""$1" +noall +answer | awk 'NF==5 {print " is a", $(NF-1), "record and points to", $NF}'
+}
+if [[ $2 ]]; then
+    show_dig "$1" "$2"
+elif [[ $1 ]]; then
+    for sub_d in 'www' 'lb-01' 'web-01' 'web-02'; do
+        show_dig "$1" "$sub_d"
+    done
+fi
+

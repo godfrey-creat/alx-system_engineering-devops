@@ -1,0 +1,45 @@
+global
+    log /dev/log local0
+    log /dev/log local1 notice
+    chroot /var/lib/haproxy
+    stats socket /run/haproxy/admin.sock mode 660 level admin
+    stats timeout 30s
+    user haproxy
+    group haproxy
+    daemon
+
+# Default SSL material locations
+ca-base /etc/ssl/certs
+crt-base /etc/ssl/private
+
+defaults
+    log global
+    mode http
+    option httplog
+    option dontlognull
+    timeout connect 5000
+    timeout client 50000
+    timeout server 50000
+
+frontend http-in
+    bind *:80
+    mode http
+    default_backend servers
+
+frontend https
+    bind *:443 ssl crt  /etc/haproxy/certs/www.codepygram.tech.pem
+    default_backend servers
+
+backend servers
+    balance roundrobin
+    server web-01 52.201.186.145:80 check
+    server web-02 35.153.79.235:80 check
+
+listen lb_server
+        bind *:80
+        mode http
+        balance roundrobin
+        option httpclose
+        option forwardfor
+        server web-01 52.201.186.145:80 check
+        server web-02 35.153.79.235:80 check
