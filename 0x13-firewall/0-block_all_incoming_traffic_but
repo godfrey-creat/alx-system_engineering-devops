@@ -1,0 +1,13 @@
+#installing ufw on ubuntu 22.04
+sudo apt install ufw
+#deny the incoming ufw
+sudo ufw default deny incoming
+#allow outgoing ufw
+sudo ufw default allow outgoing
+sudo systemctl stop ufw
+#allow the ports
+sudo ufw allow 22
+sudo ufw allow 80
+sudo ufw allow 443
+#enable the ufw
+sudo ufw enable
