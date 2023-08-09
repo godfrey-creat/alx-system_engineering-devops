@@ -1,0 +1,150 @@
+[34m
+* Datadog Agent 7 install script v1.20.0
+[0m
+[34m
+* Installing apt-transport-https, curl and gnupg
+[0m
+Get:1 http://repo.mysql.com/apt/ubuntu bionic InRelease [20.0 kB]
+Hit:2 http://security.ubuntu.com/ubuntu focal-security InRelease
+Hit:3 http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu focal InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu focal InRelease
+Ign:5 https://apt.datadoghq.com stable InRelease
+Hit:6 https://apt.datadoghq.com stable Release
+Hit:7 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:8 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+Err:1 http://repo.mysql.com/apt/ubuntu bionic InRelease
+  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 467B942D3A79BD29
+Reading package lists...
+W: GPG error: http://repo.mysql.com/apt/ubuntu bionic InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 467B942D3A79BD29
+E: The repository 'http://repo.mysql.com/apt/ubuntu bionic InRelease' is not signed.
+W: Target Packages (mysql-5.7/binary-amd64/Packages) is configured multiple times in /etc/apt/sources.list.d/mysql.list:1 and /etc/apt/sources.list.d/mysql.list:2
+W: Target Packages (mysql-5.7/binary-all/Packages) is configured multiple times in /etc/apt/sources.list.d/mysql.list:1 and /etc/apt/sources.list.d/mysql.list:2
+[31m'apt-get update' failed, the script will not install the latest version of apt-transport-https.[0m
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (7.68.0-1ubuntu2.19).
+gnupg is already the newest version (2.2.19-3ubuntu2.2).
+apt-transport-https is already the newest version (2.0.9).
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+1 not fully installed or removed.
+After this operation, 0 B of additional disk space will be used.
+Setting up datadog-signing-keys (1:1.3.1-1) ...
+[34m
+* Installing APT package sources for Datadog
+[0m
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  6226  100  6226    0     0  32259      0 --:--:-- --:--:-- --:--:-- 32259
+gpg: key 32637D44F14F620E: "Datadog, Inc. Master key (2020-09-08) <package+masterkey@datadoghq.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1713  100  1713    0     0  15715      0 --:--:-- --:--:-- --:--:-- 15715
+gpg: key E6266D4AC0962C7D: "Datadog, Inc. APT key (2023-04-20) (APT key) <package+aptkey@datadoghq.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  6226  100  6226    0     0  59865      0 --:--:-- --:--:-- --:--:--  405k
+gpg: key 32637D44F14F620E: "Datadog, Inc. Master key (2020-09-08) <package+masterkey@datadoghq.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  9001  100  9001    0     0  86548      0 --:--:-- --:--:-- --:--:-- 86548
+gpg: key D3A80E30382E94DE: "Datadog, Inc <package@datadoghq.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+Ign:1 https://apt.datadoghq.com stable InRelease
+Hit:2 https://apt.datadoghq.com stable Release
+Reading package lists...
+  [33mInstalling package(s): datadog-agent datadog-signing-keys datadog-apm-inject datadog-apm-library-all
+[0m
+Reading package lists...
+Building dependency tree...
+Reading state information...
+datadog-signing-keys is already the newest version (1:1.3.1-1).
+The following additional packages will be installed:
+  datadog-apm-library-dotnet datadog-apm-library-java datadog-apm-library-js
+  datadog-apm-library-python datadog-apm-library-ruby
+The following NEW packages will be installed:
+  datadog-agent datadog-apm-inject datadog-apm-library-all
+  datadog-apm-library-dotnet datadog-apm-library-java datadog-apm-library-js
+  datadog-apm-library-python datadog-apm-library-ruby
+0 upgraded, 8 newly installed, 0 to remove and 3 not upgraded.
+Need to get 640 MB of archives.
+After this operation, 1,999 MB of additional disk space will be used.
+Get:1 https://apt.datadoghq.com stable/7 amd64 datadog-apm-inject amd64 0.10.7-1 [35.1 MB]
+Get:2 https://apt.datadoghq.com stable/7 amd64 datadog-apm-library-java amd64 1.18.3-1 [24.2 MB]
+Get:3 https://apt.datadoghq.com stable/7 amd64 datadog-apm-library-js amd64 4.11.1-1 [17.9 MB]
+Get:4 https://apt.datadoghq.com stable/7 amd64 datadog-apm-library-dotnet amd64 2.35.0-1 [14.6 MB]
+Get:5 https://apt.datadoghq.com stable/7 amd64 datadog-apm-library-python amd64 1.17.3-1 [109 MB]
+Get:6 https://apt.datadoghq.com stable/7 amd64 datadog-apm-library-ruby amd64 1.13.0-1 [50.2 MB]
+Get:7 https://apt.datadoghq.com stable/7 amd64 datadog-apm-library-all all 0.3-1 [2,034 B]
+Get:8 https://apt.datadoghq.com stable/7 amd64 datadog-agent amd64 1:7.46.0-1 [390 MB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 640 MB in 60s (10.8 MB/s)
+Selecting previously unselected package datadog-apm-inject.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 85161 files and directories currently installed.)
+Preparing to unpack .../0-datadog-apm-inject_0.10.7-1_amd64.deb ...
+Unpacking datadog-apm-inject (0.10.7-1) ...
+Selecting previously unselected package datadog-apm-library-java.
+Preparing to unpack .../1-datadog-apm-library-java_1.18.3-1_amd64.deb ...
+Unpacking datadog-apm-library-java (1.18.3-1) ...
+Selecting previously unselected package datadog-apm-library-js.
+Preparing to unpack .../2-datadog-apm-library-js_4.11.1-1_amd64.deb ...
+Unpacking datadog-apm-library-js (4.11.1-1) ...
+Selecting previously unselected package datadog-apm-library-dotnet.
+Preparing to unpack .../3-datadog-apm-library-dotnet_2.35.0-1_amd64.deb ...
+Unpacking datadog-apm-library-dotnet (2.35.0-1) ...
+dpkg: error processing archive /tmp/apt-dpkg-install-TpLnmt/3-datadog-apm-library-dotnet_2.35.0-1_amd64.deb (--unpack):
+ cannot copy extracted data for './opt/datadog/apm/library/dotnet/netstandard2.0/Datadog.Trace.xml' to '/opt/datadog/apm/library/dotnet/netstandard2.0/Datadog.Trace.xml.dpkg-new': failed to write (No space left on device)
+dpkg-deb: error: paste subprocess was killed by signal (Broken pipe)
+Selecting previously unselected package datadog-apm-library-python.
+Preparing to unpack .../4-datadog-apm-library-python_1.17.3-1_amd64.deb ...
+Unpacking datadog-apm-library-python (1.17.3-1) ...
+dpkg: error processing archive /tmp/apt-dpkg-install-TpLnmt/4-datadog-apm-library-python_1.17.3-1_amd64.deb (--unpack):
+ cannot copy extracted data for './opt/datadog/apm/library/python/ddtrace_pkgs/site-packages-ddtrace-py3.9-musllinux_1_1/ddtrace.libs/libstdc++-a9383cce.so.6.0.28' to '/opt/datadog/apm/library/python/ddtrace_pkgs/site-packages-ddtrace-py3.9-musllinux_1_1/ddtrace.libs/libstdc++-a9383cce.so.6.0.28.dpkg-new': failed to write (No space left on device)
+dpkg-deb: error: paste subprocess was killed by signal (Broken pipe)
+Selecting previously unselected package datadog-apm-library-ruby.
+Preparing to unpack .../5-datadog-apm-library-ruby_1.13.0-1_amd64.deb ...
+Unpacking datadog-apm-library-ruby (1.13.0-1) ...
+dpkg: error processing archive /tmp/apt-dpkg-install-TpLnmt/5-datadog-apm-library-ruby_1.13.0-1_amd64.deb (--unpack):
+ cannot copy extracted data for './opt/datadog/apm/library/ruby/3.2.0/cache/ffi-1.15.5.gem' to '/opt/datadog/apm/library/ruby/3.2.0/cache/ffi-1.15.5.gem.dpkg-new': failed to write (No space left on device)
+dpkg-deb: error: paste subprocess was killed by signal (Broken pipe)
+Selecting previously unselected package datadog-apm-library-all.
+Preparing to unpack .../6-datadog-apm-library-all_0.3-1_all.deb ...
+Unpacking datadog-apm-library-all (0.3-1) ...
+Preparing to unpack .../7-datadog-agent_1%3a7.46.0-1_amd64.deb ...
+Unpacking datadog-agent (1:7.46.0-1) ...
+dpkg: error processing archive /tmp/apt-dpkg-install-TpLnmt/7-datadog-agent_1%3a7.46.0-1_amd64.deb (--unpack):
+ cannot copy extracted data for './opt/datadog-agent/sources/procps-ng/procps-ng-procps-v3.3.16.tar.gz' to '/opt/datadog-agent/sources/procps-ng/procps-ng-procps-v3.3.16.tar.gz.dpkg-new': failed to write (No space left on device)
+dpkg-deb: error: paste subprocess was killed by signal (Broken pipe)
+Errors were encountered while processing:
+ /tmp/apt-dpkg-install-TpLnmt/3-datadog-apm-library-dotnet_2.35.0-1_amd64.deb
+ /tmp/apt-dpkg-install-TpLnmt/4-datadog-apm-library-python_1.17.3-1_amd64.deb
+ /tmp/apt-dpkg-install-TpLnmt/5-datadog-apm-library-ruby_1.13.0-1_amd64.deb
+ /tmp/apt-dpkg-install-TpLnmt/7-datadog-agent_1%3a7.46.0-1_amd64.deb
+W: --force-yes is deprecated, use one of the options starting with --allow instead.
+W: Target Packages (mysql-5.7/binary-amd64/Packages) is configured multiple times in /etc/apt/sources.list.d/mysql.list:1 and /etc/apt/sources.list.d/mysql.list:2
+W: Target Packages (mysql-5.7/binary-all/Packages) is configured multiple times in /etc/apt/sources.list.d/mysql.list:1 and /etc/apt/sources.list.d/mysql.list:2
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+[31mERROR
+Failed to install one or more packages, sometimes it may be
+due to another APT source failing. See the logs above to
+determine the cause.
+If the cause is unclear, please contact Datadog support.
+*****
+
+It looks like you hit an issue when trying to install the Datadog Agent.
+
+Troubleshooting and basic usage information for the Datadog Agent are available at:
+
+    https://docs.datadoghq.com/agent/basic_agent_usage/
+[0m
+Do you want to send a failure report to Datadog (including ddagent-install.log)? (y/[n]) 
+If you are still having problems, please send an email to support@datadoghq.com
+with the contents of ddagent-install.log and any information you think would be
+useful and we will do our very best to help you solve your problem.
