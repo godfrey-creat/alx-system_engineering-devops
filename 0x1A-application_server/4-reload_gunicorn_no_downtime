@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# This script gracefully reloads Gunicorn.
+
+# Find the master Gunicorn process PID
+master_pid=$(pgrep gunicorn | head -n 1)
+
+if [ -z "$master_pid" ]; then
+    echo "Master Gunicorn process not found."
+    exit 1
+fi
+
+# Find the worker PIDs associated with the master
+worker_pids=($(pgrep -P "$master_pid"))
+
+if [ ${#worker_pids[@]} -eq 0 ]; then
+    echo "No worker processes found for the master."
+    exit 1
+fi
+
+# Gracefully restart each worker process
+for worker_pid in "${worker_pids[@]}"
+do
+    kill -HUP "$worker_pid"
+    echo "Sent SIGHUP to worker PID: $worker_pid"
+done
+
+echo "Graceful Gunicorn reload complete."
